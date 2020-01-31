@@ -1,7 +1,5 @@
 
 <?php
-echo date('d').'/';
-echo date('m').'/';
-echo date('y');
-echo 'il est : '.date('h').'h'.date('m').date('a');
+$bdd = new PDO('mysql:host=localhost;dbname=suivi_stage;charset=utf8', 'root', '');
 ?>
+
