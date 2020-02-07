@@ -12,37 +12,36 @@ $requete='INSERT INTO STAGE (idTut, nomTut, prenTut, mailTut) VALUES (?,?,?,?)';
 $query=$bdd->prepare($requete);
 $query->execute(array($ref_etu,$nomTut,$prenTut,$mailTut));
 ?>
-	<?php $reponse = $bdd->query('SELECT * FROM STAGE');
+<?php $reponse = $bdd->query('SELECT * FROM TUTENT');
 ?>
 <!DOCTYPE html>
 <html lang="fr">
 <meta charset="utf-8"/>
-<h1>Stage</h1>
+<h1>Tuteur des entreprises</h1>
 
 
 <table class="table">
-	<thead class="thead-dark"></thead>
-	  <tr>
-	  	<th scope="col">id Tut</th>
-	  	<th scope="col">nomTut</th>
-	  	<th scope="col">prenTut</th>
-	  	<th scope="col">mailTut</th>
-	  </tr>
-	</thead>
-	<tbody>  
+<thead class="thead-dark"></thead>
+ <tr>
+  <th scope="col">id Tut</th>
+  <th scope="col">nomTut</th>
+  <th scope="col">prenTut</th>
+  <th scope="col">mailTut</th>
+ </tr>
+</thead>
+<tbody>  
 <?php
 while ($donnees = $reponse->fetch())
 {
 ?>
-	<tr>
-		<td><?php echo $donnees['idTut']; ?></td>
-		<td><?php echo $donnees['nomTut']; ?></td>
-		<td><?php echo $donnees['prenTut']; ?></td>
-		<td><?php echo $donnees['mailTut']; ?></td>
-	</tr>
+<tr>
+<td><?php echo $donnees['idTut']; ?></td>
+<td><?php echo $donnees['nomTut']; ?></td>
+<td><?php echo $donnees['prenTut']; ?></td>
+<td><?php echo $donnees['mailTut']; ?></td>
+</tr>
 <?php
 }
 ?>
    </tbody>
 </table>
-
